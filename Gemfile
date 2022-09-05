@@ -33,3 +33,6 @@ group :development do
   gem 'web-console'
 end
 
+group :production do
+  gem 'pg'
+end
