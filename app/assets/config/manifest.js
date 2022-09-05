@@ -3,4 +3,5 @@
 
 //= link event_thumb.jpg
 //= link event.jpg
+//= link user.png
 //= link_directory ../stylesheets .css
