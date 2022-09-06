@@ -22,6 +22,10 @@ ru:
       destroyed: 'Вы удалили мероприятие :('
     users:
       updated: 'Вы обновили свой профиль'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: 'Ваш комментарий добавлен'
+      error: 'Ошибка с комментарием'
 
   app:
     name: 'Шашлыки!'
@@ -31,5 +35,10 @@ ru:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
     many: '%{count} ошибок'
+
+  comments:
+    comment:
+    destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+
 
 
