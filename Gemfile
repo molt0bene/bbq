@@ -7,7 +7,10 @@ gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 
 gem 'twitter-bootstrap-rails', '~> 5.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+
 gem 'devise'
+gem 'devise-i18n'
+gem 'russian'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'sprockets-rails'
