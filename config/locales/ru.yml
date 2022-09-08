@@ -29,9 +29,9 @@ ru:
 
   controllers:
     events:
-      created: 'Вы создали новое мероприятие'
-      updated: 'Вы обновили мероприятие'
-      destroyed: 'Вы удалили мероприятие :('
+      created: 'Вы создали новое событие'
+      updated: 'Вы обновили событие'
+      destroyed: 'Вы удалили событие :('
     users:
       updated: 'Вы обновили свой профиль'
     comments:
@@ -61,6 +61,10 @@ ru:
     one: '%{count} символ'
     few: '%{count} символа'
     many: '%{count} символов'
+
+  events:
+    event:
+      destroy_confirm: 'Вы уверены, что хотите удалить это событие?'
 
   comments:
     comment:
