@@ -13,6 +13,9 @@ gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
 
 gem 'carrierwave'
 gem 'rmagick'
+gem 'aws-sdk-s3', require: false
+gem "image_processing", ">= 1.2"
+
 
 gem 'sprockets-rails'
 
