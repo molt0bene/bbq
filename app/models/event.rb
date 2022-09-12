@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :user
+  has_one_attached :photo
 
   has_many :subscriptions
   has_many :subscribers, through: :subscriptions, source: :user
