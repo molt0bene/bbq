@@ -1,7 +1,8 @@
 <div class="text-center">
   <h1><%= @user.name %></h1>
 
-  <%= image_tag user_avatar(@user) %>
+  <%= image_tag @user.avatar.variant(resize_to_fit: [250, 250]) %>
+
 
   <% if @user == current_user %>
     <p class="buffer-top">

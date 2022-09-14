@@ -19,6 +19,7 @@ gem 'sprockets-rails'
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
 
+gem 'mini_magick'
 
 gem 'puma', '~> 5.0'
 

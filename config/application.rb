@@ -32,8 +32,9 @@ module Bbq
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.i18n.available_locales = [:ru, :en]
-
     config.i18n.default_locale = :ru
+
+    config.active_storage.variant_processor = :mini_magick
 
 
     # Don't generate system test files.
