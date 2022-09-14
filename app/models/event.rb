@@ -1,6 +1,8 @@
 class Event < ApplicationRecord
   belongs_to :user
-  has_one_attached :photo
+  has_one_attached :photo do |attachable|
+    attachable.variant :thumb, resize_to_limit: [50, 50]
+  end
 
   has_many :subscriptions
   has_many :subscribers, through: :subscriptions, source: :user

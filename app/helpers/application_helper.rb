@@ -1,7 +1,7 @@
 module ApplicationHelper
   def user_avatar(user)
-    if user.avatar?
-      user.avatar.url
+    if user.avatar.attached?
+      user.avatar
     else
       asset_path('user.png')
     end
@@ -15,7 +15,7 @@ module ApplicationHelper
     photos = event.photos.persisted
 
     if photos.any?
-      photos.sample.photo.url
+      photos.sample
     else
       asset_path('event.jpg')
     end
@@ -26,15 +26,15 @@ module ApplicationHelper
     photos = event.photos.persisted
 
     if photos.any?
-      photos.sample.photo.thumb.url
+      photos.sample.photo.variant(:thumb)
     else
       asset_path('event_thumb.jpg')
     end
   end
 
   def user_avatar_thumb(user)
-    if user.avatar.file.present?
-      user.avatar.thumb.url
+    if user.avatar.attached?
+      user.avatar.variant(:thumb)
     else
       asset_path('user.png')
     end

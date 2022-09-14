@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   before_action :set_event, only: %i[create destroy]
   before_action :set_photo, only: [:destroy]
-
+  #TODO: localize
   def create
     @new_photo = @event.photos.build(photo_params)
     @new_photo.user = current_user

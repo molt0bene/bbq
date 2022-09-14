@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
+# положить apt файл на heroku
 ruby '3.0.2'
 
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
@@ -11,19 +11,16 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
 
-gem 'carrierwave'
-gem 'rmagick'
 gem 'aws-sdk-s3', require: false
 gem "image_processing", ">= 1.2"
-
 
 gem 'sprockets-rails'
 
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
 
+
 gem 'puma', '~> 5.0'
-gem 'importmap-rails'
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
