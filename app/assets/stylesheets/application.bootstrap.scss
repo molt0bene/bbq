@@ -42,3 +42,18 @@
 .thumbnail-inner {
   padding: 20px 4px 4px;
 }
+
+/* Links in navbar */
+.unstyled-link {
+  text-decoration: none;
+  color: black;
+}
+
+.unstyled-button {
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}

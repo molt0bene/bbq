@@ -4,7 +4,6 @@
  */
 
 .event-info {
-  z-index: 2;
   position: relative;
   color: white;
   overflow: hidden;
@@ -14,7 +13,7 @@
 .event-background {
   position: absolute;
   width: 100%;
-  z-index: 1;
+  z-index: -1;
 
   top: 0; bottom: 0;
   left: 0; right: 0;
@@ -30,27 +29,22 @@
 }
 
 .event-description * {
-  z-index: 2;
   color: white;
 }
 
 .event-description a {
-  z-index: 2;
   color: #d0d0ff;
 }
 
 .event-description small {
-  z-index: 2;
   color: #e0e0e0;
 }
 
 .event-info-inner {
-  z-index: 2;
   background:rgba(0, 0, 0, 0.4);
 }
 
 .event-map {
-  z-index: 2;
   margin: 20px 0;
   width: 100%;
   height: 400px;

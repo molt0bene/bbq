@@ -3,7 +3,7 @@
     <!-- fix -->
     <!-- в photo исправить хэлперы и вьюхи -->
     <!-- describe: test -->
-    <%= image_tag(user.avatar.variant(resize_to_fit: [50, 50]), class: 'img-thumbnail') %>
+    <%= image_tag(user_avatar_thumb(user), class: 'img-icon') %>
   </span>
   <span class="user-name">
     <% if request.path == user_path(user) %>
