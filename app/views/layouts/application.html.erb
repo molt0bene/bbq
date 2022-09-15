@@ -9,8 +9,8 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
 
     <%= javascript_include_tag "application" %>
-    <link href="application.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="application.bootstrap.scss" rel="stylesheet">
   </head>
   <body>
 
@@ -30,8 +30,8 @@
               <li class="nav-item me-lg-2"><%= button_to 'Выйти', destroy_user_session_path,
                               method: :delete %></li>
             <% else %>
-              <li class="nav-item"><%= link_to 'Войти', new_user_session_path %></li>
-              <li class="nav-item"><%= link_to 'Зарегистрироваться',
+              <li class="nav-item me-lg-2"><%= link_to 'Войти', new_user_session_path %></li>
+              <li class="nav-item me-lg-2"><%= link_to 'Зарегистрироваться',
                               new_user_registration_path %></li>
             <% end %>
           </ul>
@@ -56,5 +56,7 @@
 
     </div> <!-- /container -->
 
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    </body>
 </html>
