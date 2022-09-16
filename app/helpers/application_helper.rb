@@ -15,7 +15,7 @@ module ApplicationHelper
     photos = event.photos.persisted
 
     if photos.any?
-      photos.sample
+      photos.sample.photo.url
     else
       asset_path('event.jpg')
     end
