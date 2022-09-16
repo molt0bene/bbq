@@ -39,8 +39,11 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-9">
-
+        <div class="col-lg-9" role="alert">
+          <% flash.each do |key, value| %>
+            <!-- TODO!! -->
+            <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+          <% end %>
 
           <%= yield %>
         </div>

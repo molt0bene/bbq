@@ -4,7 +4,7 @@ class Event < ApplicationRecord
     attachable.variant :thumb, resize_to_limit: [50, 50]
   end
 
-  has_many :subscriptions
+  has_many :subscriptions, dependent: :destroy
   has_many :subscribers, through: :subscriptions, source: :user
   has_many :comments, dependent: :destroy
   has_many :photos, dependent: :destroy
