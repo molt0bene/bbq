@@ -74,5 +74,33 @@ ru:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
 
+  forms:
+    headers:
+      events:
+        edit: 'Редактирование события'
+        index: 'События'
+        new: 'Новое событие'
+      passwords:
+        edit: 'Сменить пароль'
+        new: 'Забыли пароль?'
+      registrations:
+        edit: 'Редактирование пользователя'
+        new: 'Регистрация'
+      sessions:
+        new: 'Вход на сайт'
+    buttons:
+      save: 'Сохранить'
+      send: 'Отправить'
+      register: 'Зарегистрироваться'
+      login: 'Войти'
+    links:
+      register: 'Зарегистрироваться'
+      login: 'Войти'
+      forgot_password: 'Забыли пароль?'
+      not_receive_passwd: 'Не получили инструкции по сбросу пароля?'
+      not_receive_unlock: 'Не получили инструкции по разблокировке?'
+      sign_in_with: 'Войти с помощью'
+      back: 'Вернуться'
+
 
 

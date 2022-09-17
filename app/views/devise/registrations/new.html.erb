@@ -1,4 +1,4 @@
-<h2>Регистрация</h2>
+<h2><%= I18n.t('forms.headers.registrations.new') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -11,7 +11,7 @@
 
   <div class="form-group">
     <%= fa_icon('key') %>
-    <%= f.label :password, "Пароль" %>
+    <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(минимум <%= @minimum_password_length %> символов)</em>
     <% end %><br />
@@ -20,12 +20,12 @@
 
   <div class="form-group">
     <%= fa_icon('key') %>
-    <%= f.label :password_confirmation, "Повторите пароль" %><br />
+    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Зарегистрироваться", class: 'btn btn-primary' %>
+    <%= f.submit "#{I18n.t('forms.buttons.register')}", class: 'btn btn-primary' %>
   </div>
 <% end %>
 

@@ -5,7 +5,7 @@ ruby '3.0.2'
 
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 
-gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+gem "font-awesome-sass", "~> 6.2.0"
 
 gem 'devise'
 gem 'devise-i18n'

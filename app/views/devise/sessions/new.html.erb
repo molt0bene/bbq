@@ -1,4 +1,4 @@
-<h2>Вход на сайт</h2>
+<h2><%= I18n.t('forms.headers.sessions.new') %></h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -23,7 +23,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit 'Войти', class: 'btn btn-primary' %>
+    <%= f.submit "#{I18n.t('forms.buttons.login')}", class: 'btn btn-primary' %>
   </div>
 <% end %>
 
