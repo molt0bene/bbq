@@ -21,12 +21,6 @@
     <%= f.text_area :description, class: 'form-control' %>
   </div>
 
-  <!-- fix -->
-  <div class="form-group">
-    <%= f.label :photo %>
-    <%= f.file_field :photo, class: 'form-control' %>
-  </div>
-
   <div class="actions">
     <%= f.submit "#{I18n.t('forms.buttons.save')}", class: 'btn btn-primary' %>
     или <%= link_to "#{I18n.t('forms.links.back')}", :back %>
