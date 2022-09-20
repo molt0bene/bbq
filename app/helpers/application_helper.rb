@@ -7,8 +7,8 @@ module ApplicationHelper
     end
   end
 
-  def fa_icon(icon_class)
-    content_tag 'span', '', class: "far fa-#{icon_class}"
+  def bi_icon(icon_class) # используются bootstrap-icons
+    content_tag 'span', '', class: "bi bi-#{icon_class}"
   end
 
   def event_photo(event)

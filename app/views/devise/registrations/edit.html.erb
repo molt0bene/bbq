@@ -4,7 +4,7 @@
   <%= render 'devise/shared/error_messages', resource: resource %>
 
   <div class='form-group'>
-    <%= fa_icon('envelope') %>
+    <%= bi_icon('envelope') %>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
   </div>
@@ -14,7 +14,7 @@
   <% end %>
 
   <div class='form-group'>
-    <%= fa_icon('key') %>
+    <%= bi_icon('key') %>
     <%= f.label :password %> <i>(если не хотите менять, оставьте поле пустым)</i><br />
     <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
     <% if @minimum_password_length %>
@@ -24,13 +24,13 @@
   </div>
 
   <div class='form-group'>
-    <%= fa_icon('key') %>
+    <%= bi_icon('key') %>
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control' %>
   </div>
 
   <div class='form-group'>
-    <%= fa_icon('key') %>
+    <%= bi_icon('key') %>
     <%= f.label :current_password %> <i>(введите его для сохранения изменений)</i><br />
     <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
   </div>
