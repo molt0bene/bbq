@@ -44,5 +44,4 @@
 
 /node_modules
 
-config/database.yml
 config/secrets.yml
