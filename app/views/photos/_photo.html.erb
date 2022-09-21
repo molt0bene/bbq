@@ -1,5 +1,11 @@
 <div class="event-photo buffer-both">
   <%= link_to image_tag(photo.photo.variant(:thumb)), photo.photo %>
 
-  Добавил <%= render partial: 'users/user', object: photo.user %>
+  <%= t('views.added_by') %> <%= render partial: 'users/user', object: photo.user %>
+
+  <% if current_user_can_edit?(photo) %>
+    <%= button_to bi_icon('trash'), event_photo_path(photo.event, photo),
+                  class: "unstyled-button", method: :delete,
+                  form: { data: {confirm: t('photos.photo.destroy_confirm')} } %>
+  <% end %>
 </div>

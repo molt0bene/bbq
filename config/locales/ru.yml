@@ -66,6 +66,10 @@ ru:
     event:
       destroy_confirm: 'Вы уверены, что хотите удалить это событие?'
 
+  photos:
+    photo:
+      destroy_confirm: 'Вы уверены, что хотите удалить это фото?'
+
   comments:
     comment:
     destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
@@ -112,6 +116,9 @@ ru:
       in_your_form: 'В вашей форме'
       change_password: 'Сменить пароль'
       organized_by: 'Организовал:'
+
+  views:
+    added_by: 'Добавил'
 
   empty_state: 'Пользователь пока не организовал ни одного события.'
 
