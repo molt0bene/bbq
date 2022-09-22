@@ -9,7 +9,7 @@ set :repo_url, "git@github.com:molt0bene/bbq.git"
 set :deploy_to, "/home/deploy/www"
 
 # Файлы, которые лежат вне репозитория
-append :linked_files, 'config/database.yml', 'config/secrets.yml'
+append :linked_files, 'config/database.yml', 'config/master.key', '.env'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 
 # Default value for :format is :airbrussh.

@@ -20,6 +20,9 @@ gem 'jsbundling-rails'
 gem 'mailjet'
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'ed25519', '>= 1.2', '< 2.0'
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+
 gem 'mini_magick'
 
 gem 'puma', '~> 5.0'
