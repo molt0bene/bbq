@@ -42,4 +42,5 @@
 /node_modules
 
 config/secrets.yml
+config/database.yml
 .env
