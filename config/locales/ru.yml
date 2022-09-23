@@ -136,6 +136,9 @@ ru:
   views:
     added_by: 'Добавил'
 
+  pundit:
+    not_authorized: 'Вам сюда нельзя'
+
   empty_state: 'Пользователь пока не организовал ни одного события.'
 
 

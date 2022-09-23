@@ -191,6 +191,8 @@ GEM
     pg (1.4.3)
     puma (5.6.5)
       nio4r (~> 2.0)
+    pundit (2.2.0)
+      activesupport (>= 3.0.0)
     racc (1.6.0)
     rack (2.2.4)
     rack-test (2.0.2)
@@ -293,6 +295,7 @@ DEPENDENCIES
   mini_magick
   pg
   puma (~> 5.0)
+  pundit (~> 2.2)
   rails (~> 7.0.3, >= 7.0.3.1)
   rails-i18n (~> 7.0, >= 7.0.5)
   sprockets-rails

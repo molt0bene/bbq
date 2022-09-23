@@ -11,6 +11,7 @@ gem 'rails-i18n', '~> 7.0', '>= 7.0.5'
 
 gem 'aws-sdk-s3', require: false
 gem "image_processing", ">= 1.2"
+gem 'pundit', '~> 2.2'
 
 gem 'sprockets-rails'
 
