@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # положить apt файл на heroku
 ruby '3.0.2'
 
+gem 'sassc-rails'
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 
 gem 'devise'
