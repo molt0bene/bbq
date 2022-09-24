@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-md-12">
       <% if @user.events.any? %>
-        <h3><%= I18n.t('forms.text.organized_by') %></h3>
+        <h3><%= I18n.t('views.organized_by') %></h3>
         <div class="row">
           <%= render partial: 'events/event', collection: @user.events %>
         </div>
