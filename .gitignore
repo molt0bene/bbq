@@ -44,3 +44,7 @@
 config/secrets.yml
 config/database.yml
 .env
+
+app/assets/builds/application.css
+app/assets/builds/application.js
+app/assets/builds/application.js.map
