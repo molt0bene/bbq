@@ -37,7 +37,10 @@
       <div class="row">
         <div class="col-lg-9" role="alert">
           <% flash.each do |key, value| %>
-            <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+            <div class="alert alert-<%= key %> alert-dismissible">
+              <%= value %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
           <% end %>
 
           <%= yield %>
