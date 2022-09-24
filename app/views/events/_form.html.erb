@@ -21,6 +21,11 @@
     <%= f.text_area :description, class: 'form-control' %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :pincode %>
+    <%= f.text_field :pincode, class: 'form-control' %>
+  </div>
+
   <div class="actions">
     <%= f.submit "#{I18n.t('forms.buttons.save')}", class: 'btn btn-primary' %>
     или <%= link_to "#{I18n.t('forms.links.back')}", :back %>
