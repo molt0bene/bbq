@@ -1,15 +1,18 @@
 <span class="subscription">
-  <% if subscription.user.present? %>
-    <%= render partial: 'users/user', object: subscription.user %>
-  <% else %>
-    <em><%= subscription.user_name %></em>
-  <% end %>
-  <% if current_user_can_edit?(subscription) %>
-    <%= link_to(
-          bi_icon('times'),
+  <div class="comment">
+    <% if subscription.user.present? %>
+      <%= render partial: 'users/user', object: subscription.user %>
+    <% else %>
+      <em><%= subscription.user_name %></em>
+    <% end %>
+
+    <% if current_user_can_edit?(subscription) %>
+    <%= button_to(
+          bi_icon('x'),
           event_subscription_path(subscription.event, subscription),
-          method: :delete,
-          data: {confirm: t('.destroy_confirm')}
+          method: :delete,  class: 'unstyled-button',
+          form: { data: {turbo_confirm: t('.destroy_confirm')}, style: "display:inline-block;" }
         ) %>
-  <% end %>
+    <% end %>
+  </div>
 </span>

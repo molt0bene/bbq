@@ -12,10 +12,8 @@
 
     <% if current_user_can_edit?(comment) %>
 
-      <%= button_to event_comment_path(comment.event, comment), method: :delete, class: 'unstyled-button',
-                    form: { data: {turbo_confirm: t('comments.destroy_confirm')} } do %>
-        <%= bi_icon('trash') %>
-      <% end %>
+      <%= button_to bi_icon('trash'), event_comment_path(comment.event, comment), method: :delete, class: 'unstyled-button',
+                    form: { data: {turbo_confirm: t('comments.destroy_confirm')} } %>
     <% end %>
   </p>
 </div>

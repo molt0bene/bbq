@@ -4,7 +4,7 @@
   <%= t('views.added_by') %> <%= render partial: 'users/user', object: photo.user %>
 
   <% if current_user_can_edit?(photo) %>
-    <%= button_to bi_icon('trash'), event_photo_path(photo.event, photo),
+    <%= button_to bi_icon('x'), event_photo_path(photo.event, photo),
                   class: "unstyled-button", method: :delete,
                   form: { data: {turbo_confirm: t('photos.photo.destroy_confirm')} } %>
   <% end %>
