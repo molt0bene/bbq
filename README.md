@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Добро пожаловать на "Шашлыки"! Здесь вы можете:
 
-Things you may want to cover:
+* Создавать события и подписываться на них
 
-* Ruby version
+* Загружать фотки
 
-* System dependencies
+* Писать комментарии
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* И, конечно, звать друзей на свои вечеринки 
+💃🏼
