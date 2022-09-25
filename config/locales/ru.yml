@@ -114,6 +114,8 @@ ru:
       sessions:
         new: 'Вход на сайт'
     buttons:
+      edit: 'Изменить'
+      delete: 'Удалить'
       save: 'Сохранить'
       send: 'Отправить'
       register: 'Зарегистрироваться'
@@ -122,6 +124,7 @@ ru:
       subscribe: 'Подписаться'
       send_confirm: 'Получить инструкции по сбросу пароля'
       create_event: 'Создать событие'
+      delete_account: 'Удалить аккаунт'
     links:
       register: 'Зарегистрироваться'
       edit_profile: 'Редактировать профиль'
@@ -131,17 +134,38 @@ ru:
       not_receive_unlock: 'Не получили инструкции по разблокировке?'
       sign_in_with: 'Войти с помощью'
       back: 'Вернуться'
-      change_password: 'Сменить пароль'
+      change_password: 'Изменить пароль'
+      are_you_sure: 'Вы уверены?'
+      main: 'На главную'
 
   views:
     added_by: 'Добавил'
     in_your_form: 'В вашей форме'
     organized_by: 'Организовал:'
+    delete_question: 'Вам не понравились наши "Шашлыки"?'
+    waiting_confirm: 'Ожидаем подтверждения от:'
+
+    labels:
+      leave_blank: '(если не хотите менять, оставьте поле пустым)'
+      type_to_save: '(введите его для сохранения изменений)'
+      minimum: 'минимум'
+      pincode: 'Пин-код'
+
+    event:
+      invites: 'Зовёт'
+      subscribers: 'Пойдут:'
+      subscribe: 'Я пойду'
 
   pundit:
     not_authorized: 'Вам сюда нельзя'
 
   empty_state: 'Пользователь пока не организовал ни одного события.'
 
+  mailer:
+    new_subscription: 'Новая подписка на'
+    new_comment: 'Новый комментарий'
+
+  policy:
+    must_resolve: 'Вам нужно определить #resolve в'
 
 

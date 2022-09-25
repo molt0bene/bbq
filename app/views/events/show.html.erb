@@ -21,12 +21,12 @@
             <div class="container buffer-both">
               <div class="row">
                 <div class="col-lg-3">
-                  <%= link_to 'Изменить', edit_event_path(@event),
+                  <%= link_to t('forms.buttons.edit'), edit_event_path(@event),
                           class: 'btn btn-primary btn-block mr-3' %>
                 </div>
 
                 <div class="col-lg-3">
-                  <%= button_to 'Удалить', event_path(@event), method: :delete,
+                  <%= button_to t('forms.buttons.delete'), event_path(@event), method: :delete,
                           class: 'btn btn-danger btn-block',
                                 form: { data: {turbo_confirm: t('events.event.destroy_confirm')} } %>
                 </div>
@@ -61,11 +61,11 @@
 
     <div class="col-md-4">
       <div class="event-owner">
-        <h4>Зовет:</h4>
+        <h4><%= t('views.event.invites') %></h4>
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
       <div class="event-subscriptions">
-        <h4>Пойдут:</h4>
+        <h4><%= t('views.event.subscribers') %></h4>
         <div>
           <p>
             <%= render partial: 'subscriptions/subscription',
@@ -76,7 +76,7 @@
 
       <% unless this_is_current_user?(@event) %>
         <div class="event-subscription-form">
-          <h4>Я пойду:</h4>
+          <h4><%= t('views.event.subscribe') %></h4>
           <div>
             <%= render partial: 'subscriptions/form', locals: {
               subscription: @new_subscription || @event.subscriptions.build

@@ -10,16 +10,16 @@
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Ожидаем подтверждения от: <%= resource.unconfirmed_email %></div>
+    <div><%= t('views.waiting_confirm') %> <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class='form-group'>
     <%= bi_icon('key') %>
-    <%= f.label :password %> <i>(если не хотите менять, оставьте поле пустым)</i><br />
+    <%= f.label :password %> <i><%= t('views.labels.leave_blank') %></i><br />
     <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= I18n.t('chars', count: @minimum_password_length) %> минимум</em>
+      <em><%= I18n.t('chars', count: @minimum_password_length) %> <%= t('views.labels.minimum') %></em>
     <% end %>
   </div>
 
@@ -31,7 +31,7 @@
 
   <div class='form-group'>
     <%= bi_icon('key') %>
-    <%= f.label :current_password %> <i>(введите его для сохранения изменений)</i><br />
+    <%= f.label :current_password %> <i><%= t('views.labels.type_to_save') %></i><br />
     <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
   </div>
 
@@ -42,8 +42,8 @@
 
 <h3>Удалить аккаунт</h3>
 
-<p>Вам не понравились наши "Шашлыки"? <%= button_to 'Удалить аккаунт', registration_path(resource_name),
-                          data: { confirm: 'Вы уверены?' }, method: :delete,
+<p><%= t('views.delete_question') %> <%= button_to t('forms.buttons.delete_account'), registration_path(resource_name),
+                          data: { confirm: t('forms.links.are_you_sure') }, method: :delete,
                           class: 'btn btn-danger'%></p>
 
-<%= link_to 'Назад', :back %>
+<%= link_to t('forms.links.back'), :back %>
