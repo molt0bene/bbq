@@ -20,7 +20,7 @@
 
   <div class="actions">
     <%= f.submit "#{I18n.t('forms.buttons.save')}", class: 'btn btn-primary' %>
-    или <%= link_to "#{I18n.t('forms.links.back')}", :back %>
+    <%= I18n.t('forms.text.or') %> <%= link_to "#{I18n.t('forms.links.back')}", :back %>
   </div>
 <% end %>
 

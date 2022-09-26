@@ -139,6 +139,8 @@ ru:
       change_password: 'Изменить пароль'
       are_you_sure: 'Вы уверены?'
       main: 'На главную'
+    text:
+      or: 'или'
 
   views:
     added_by: 'Добавил'

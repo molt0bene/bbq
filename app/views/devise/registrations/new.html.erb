@@ -4,23 +4,33 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="form-group">
-    <%= bi_icon('envelope') %>
-    <%= f.label :email %><br />
+    <%= f.label :email do %>
+      <%= bi_icon('envelope') %>
+      <%= User.human_attribute_name :email %>
+    <% end %>
+
     <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="form-group">
-    <%= bi_icon('key') %>
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(минимум <%= @minimum_password_length %> символов)</em>
-    <% end %><br />
+    <%= f.label :password do %>
+      <%= bi_icon('key') %>
+      <%= User.human_attribute_name :password %>
+
+      <% if @minimum_password_length %>
+        <em>(<%= t('views.labels.minimum') %> <%= I18n.t('chars', count: @minimum_password_length) %>)</em>
+      <% end %>
+    <% end %>
+
     <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
   </div>
 
   <div class="form-group">
-    <%= bi_icon('key') %>
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation do %>
+      <%= bi_icon('key') %>
+      <%= User.human_attribute_name :password_confirmation %>
+    <% end %>
+
     <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
   </div>
 
