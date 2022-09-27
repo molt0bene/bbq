@@ -41,15 +41,18 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:body, :user_name)
     end
 
-  def notify_subscribers(event, comment)
-    # Собираем всех подписчиков и автора события в массив мэйлов, исключаем повторяющиеся
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
-
-    # По адресам из этого массива делаем рассылку
-    # Как и в подписках, берём EventMailer и его метод comment с параметрами
-    # И отсылаем в том же потоке
-    all_emails.each do |mail|
-      EventMailer.comment(event, comment, mail).deliver_now
+    def notify_subscribers(event, comment)
+      # Собираем всех подписчиков и автора события в массив мэйлов
+      all_emails = event.subscriptions.filter_map {|subscription| subscription.user_email unless user_wrote_comment(subscription.user, comment)}
+      all_emails << event.user.email unless user_wrote_comment(event.user, comment)
+      
+      # По адресам из этого массива делаем рассылку
+      all_emails.each do |mail|
+        EventMailer.comment(event, comment, mail).deliver_now
+      end
     end
-  end
+
+    def user_wrote_comment(user, comment)
+      comment.user.present? && comment.user == user
+    end
 end
