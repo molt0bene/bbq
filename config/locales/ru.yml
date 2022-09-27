@@ -165,6 +165,8 @@ ru:
       subscribers: 'Пойдут:'
       subscribe: 'Я пойду'
 
+    mailer:
+      do_not_miss_photo: 'Не пропустите новую фотографию в событии'
   pundit:
     not_authorized: 'Вам сюда нельзя'
 
@@ -173,6 +175,7 @@ ru:
   mailer:
     new_subscription: 'Новая подписка на'
     new_comment: 'Новый комментарий'
+    new_photo: 'Новая фотка'
 
   policy:
     must_resolve: 'Вам нужно определить #resolve в'
