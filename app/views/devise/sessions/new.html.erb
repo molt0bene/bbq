@@ -11,14 +11,14 @@
 
   <div class="form-group">
     <%= bi_icon('key') %>
-    <%= f.label :password, "Пароль" %><br />
+    <%= f.label :password %><br />
     <%= f.password_field :password, class: "form-control", autocomplete: "current-password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
     <div class="form-group">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, "Запомнить" %>
+      <%= f.label :remember_me %>
     </div>
   <% end %>
 

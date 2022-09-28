@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
       # Собираем всех подписчиков и автора события в массив мэйлов
       all_emails = event.subscriptions.filter_map {|subscription| subscription.user_email unless user_wrote_comment(subscription.user, comment)}
       all_emails << event.user.email unless user_wrote_comment(event.user, comment)
-      
+
       # По адресам из этого массива делаем рассылку
       all_emails.each do |mail|
         EventMailer.comment(event, comment, mail).deliver_now
