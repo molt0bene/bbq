@@ -50,8 +50,4 @@ class CommentsController < ApplicationController
       # По адресам из этого массива делаем рассылку
       EventMailer.comment(event, comment, all_emails).deliver_now
     end
-
-    def user_wrote_comment(user, comment)
-      comment.user.present? && comment.user == user
-    end
 end
