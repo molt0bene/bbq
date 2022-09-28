@@ -43,13 +43,12 @@ class CommentsController < ApplicationController
 
     def notify_subscribers(event, comment)
       # Собираем всех подписчиков и автора события в массив мэйлов
-      all_emails = event.subscriptions.filter_map {|subscription| subscription.user_email unless user_wrote_comment(subscription.user, comment)}
-      all_emails << event.user.email unless user_wrote_comment(event.user, comment)
+      all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
+
+      all_emails.delete(comment.user.email) if comment.user.present?
 
       # По адресам из этого массива делаем рассылку
-      all_emails.each do |mail|
-        EventMailer.comment(event, comment, mail).deliver_now
-      end
+      EventMailer.comment(event, comment, all_emails).deliver_now
     end
 
     def user_wrote_comment(user, comment)
