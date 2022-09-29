@@ -66,7 +66,19 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.delivery_method = :mailjet
+  #config.action_mailer.delivery_method = :mailjet
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'in.mailjet.com',
+    :enable_starttls_auto => true,
+    :port           => 587,
+    :authentication => :plain,
+    :user_name      => ENV['MAILJET_API_KEY'],
+    :password       => ENV['MAILJET_SECRET_KEY'],
+    :domain         => 'example.com'
+  }
+
   config.action_mailer.default_url_options = { host: 'extracoolbbq.herokuapp.com' }
 
   # Ignore bad email addresses and do not raise email delivery errors.
