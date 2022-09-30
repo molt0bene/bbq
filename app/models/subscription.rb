@@ -8,8 +8,9 @@ class Subscription < ApplicationRecord
   validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/, unless: -> { user.present? }
 
   validates :user, uniqueness: {scope: :event_id}, if: -> { user.present? }
-  validate :anti_own_event_subscription
-  validates :user_email, uniqueness: {scope: :event_id}, unless: -> { user.present? }
+  validate :own_event_subscription
+  #validates :user_email, uniqueness: {scope: :event_id}, unless: -> { user.present? }
+  validate :anon_user_email
 
   def user_name
     if user.present?
@@ -27,9 +28,17 @@ class Subscription < ApplicationRecord
     end
   end
 
-  def anti_own_event_subscription
+  def own_event_subscription
     if user == event.user
       errors.add(:user, :own_event)
+    end
+  end
+
+  def anon_user_email
+    all_emails = User.all.to_a.map(&:email)
+
+    if all_emails.include?(user_email)
+      errors.add(:user, :email_already_exists)
     end
   end
 end

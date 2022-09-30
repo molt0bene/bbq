@@ -34,6 +34,7 @@ ru:
           attributes:
             user:
               own_event: 'не может подписаться на свое же событие'
+              email_already_exists: 'с такой почтой уже зарегистрирован на сайте!'
 
   controllers:
     events:
