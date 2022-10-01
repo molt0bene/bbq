@@ -35,9 +35,9 @@ class Subscription < ApplicationRecord
   end
 
   def anon_user_email
-    all_emails = User.all.to_a.map(&:email)
+    db_user = User.where(email: user_email)
 
-    if all_emails.include?(user_email)
+    if !user.present? && db_user.present?
       errors.add(:user, :email_already_exists)
     end
   end
