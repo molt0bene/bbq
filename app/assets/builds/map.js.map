@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../javascript/map.js"],
+  "sourcesContent": ["ymaps.ready(init);\nvar myMap;\n\nfunction init(){\n    address = document.getElementById('map').getAttribute('data-address');\n\n    myMap = new ymaps.Map(\"map\", {\n        center: [55.76, 37.64],\n        zoom: 10\n    });\n\n    myGeocoder = ymaps.geocode(address);\n\n    myGeocoder.then(\n        function (res) {\n            coordinates = res.geoObjects.get(0).geometry.getCoordinates();\n\n            myMap.geoObjects.add(\n                new ymaps.Placemark(\n                    coordinates,\n                    {iconContent: address},\n                    {preset: 'islands#blueStretchyIcon'}\n                )\n            );\n\n            myMap.setCenter(coordinates);\n            myMap.setZoom(15);\n        }, function (err) {\n            alert('error');\n        }\n    );\n}\n"],
+  "mappings": ";;AAAA,QAAM,MAAM,IAAI;AAChB,MAAI;AAEJ,WAAS,OAAM;AACX,cAAU,SAAS,eAAe,KAAK,EAAE,aAAa,cAAc;AAEpE,YAAQ,IAAI,MAAM,IAAI,OAAO;AAAA,MACzB,QAAQ,CAAC,OAAO,KAAK;AAAA,MACrB,MAAM;AAAA,IACV,CAAC;AAED,iBAAa,MAAM,QAAQ,OAAO;AAElC,eAAW;AAAA,MACP,SAAU,KAAK;AACX,sBAAc,IAAI,WAAW,IAAI,CAAC,EAAE,SAAS,eAAe;AAE5D,cAAM,WAAW;AAAA,UACb,IAAI,MAAM;AAAA,YACN;AAAA,YACA,EAAC,aAAa,QAAO;AAAA,YACrB,EAAC,QAAQ,2BAA0B;AAAA,UACvC;AAAA,QACJ;AAEA,cAAM,UAAU,WAAW;AAC3B,cAAM,QAAQ,EAAE;AAAA,MACpB;AAAA,MAAG,SAAU,KAAK;AACd,cAAM,OAAO;AAAA,MACjB;AAAA,IACJ;AAAA,EACJ;",
+  "names": []
+}
