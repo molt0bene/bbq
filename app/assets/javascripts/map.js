@@ -1,8 +1,8 @@
-ymaps.ready(init);
-var myMap;
+document.addEventListener("turbo:load", () => {
+    ymaps.ready(init);
+    var myMap;
 
-function init(){
-    document.addEventListener("turbo:load", () => {
+    function init() {
         address = document.getElementById('map').getAttribute('data-address');
         myMap = new ymaps.Map("map", {
             center: [55.76, 37.64],
@@ -29,5 +29,5 @@ function init(){
                 alert('error');
             }
         );
-    })
-}
+    }
+})
