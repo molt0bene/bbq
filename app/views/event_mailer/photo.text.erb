@@ -1,1 +1,1 @@
-<%= t('views.mailer.do_not_miss_photo') %> <%= @event.title %>!
+<%= t('views.mailer.do_not_miss_photo') %> <%= link_to @event.title, url_for(@event) %>!

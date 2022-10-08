@@ -74,7 +74,7 @@
         </div>
       </div>
 
-      <% unless this_is_current_user?(@event) %>
+      <% unless this_is_current_user?(@event) || @event.subscribers.include?(current_user) %>
         <div class="event-subscription-form">
           <h4><%= t('views.event.subscribe') %></h4>
           <div>
