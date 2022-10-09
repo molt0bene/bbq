@@ -78,7 +78,7 @@ Rails.application.configure do
   #   :domain         => 'example.com'
   # }
 
-  config.action_mailer.default_url_options = { host: 'extracoolbbq.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'moltobenedeploy.ru' }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
