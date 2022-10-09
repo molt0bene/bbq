@@ -9,6 +9,7 @@ Rails.application.configure do
 
   config.active_job.queue_adapter = :resque
   config.active_job.queue_name_prefix = "bbq_#{Rails.env}"
+  config.active_job.queue_adapter = :async
 
   config.cache_classes = false
 

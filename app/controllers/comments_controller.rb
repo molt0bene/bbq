@@ -48,6 +48,6 @@ class CommentsController < ApplicationController
       all_emails.delete(comment.user.email) if comment.user.present?
 
       # По адресам из этого массива делаем рассылку
-      EventMailer.comment(event, comment, all_emails).deliver_now
+      EventMailer.comment(event, comment, all_emails).deliver_later
     end
 end
