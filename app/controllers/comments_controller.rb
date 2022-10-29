@@ -28,26 +28,27 @@ class CommentsController < ApplicationController
   end
 
   private
-    def set_event
-      @event = Event.find(params[:event_id])
-    end
 
-    def set_comment
-      @comment = @event.comments.find(params[:id])
-    end
+  def set_event
+    @event = Event.find(params[:event_id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def comment_params
-      params.require(:comment).permit(:body, :user_name)
-    end
+  def set_comment
+    @comment = @event.comments.find(params[:id])
+  end
 
-    def notify_subscribers(event, comment)
-      # Собираем всех подписчиков и автора события в массив мэйлов
-      all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
+  # Only allow a list of trusted parameters through.
+  def comment_params
+    params.require(:comment).permit(:body, :user_name)
+  end
 
-      all_emails.delete(comment.user.email) if comment.user.present?
+  def notify_subscribers(event, comment)
+    # Собираем всех подписчиков и автора события в массив мэйлов
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
 
-      # По адресам из этого массива делаем рассылку
-      EventMailer.comment(event, comment, all_emails).deliver_later
-    end
+    all_emails.delete(comment.user.email) if comment.user.present?
+
+    # По адресам из этого массива делаем рассылку
+    EventMailer.comment(comment, all_emails).deliver_later
+  end
 end
