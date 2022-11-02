@@ -49,3 +49,9 @@
   width: 100%;
   height: 400px;
 }
+
+.map {
+  display: block;
+  z-index: 20000 !important;
+  background: transparent !important;
+}

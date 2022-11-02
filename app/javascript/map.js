@@ -1,9 +1,12 @@
 document.addEventListener("turbo:load", () => {
     ymaps.ready(init);
     var myMap;
+    console.log("hi 1");
 
     function init() {
-        address = document.getElementById('map').getAttribute('data-address');
+        console.log("hi 2")
+        const address = document.getElementById('map').getAttribute('data-address');
+
         myMap = new ymaps.Map("map", {
             center: [55.76, 37.64],
             zoom: 10
@@ -26,8 +29,9 @@ document.addEventListener("turbo:load", () => {
                 myMap.setCenter(coordinates);
                 myMap.setZoom(15);
             }, function (err) {
-                alert('error');
+                alert('Ошибка при определении местоположения');
             }
         );
+        console.log("hi 3");
     }
 })
