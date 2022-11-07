@@ -125,6 +125,7 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.10.2)
       devise (>= 4.8.0)
+    diff-lcs (1.5.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.8.1)
@@ -200,6 +201,8 @@ GEM
       nio4r (~> 2.0)
     pundit (2.2.0)
       activesupport (>= 3.0.0)
+    pundit-matchers (1.7.0)
+      rspec-rails (>= 3.0.0)
     raabro (1.4.0)
     racc (1.6.0)
     rack (2.2.4)
@@ -263,6 +266,23 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rspec-core (3.12.0)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
+    rspec-support (3.12.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
@@ -276,6 +296,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    shoulda-matchers (5.2.0)
+      activesupport (>= 5.2.0)
     sinatra (3.0.2)
       mustermann (~> 3.0)
       rack (~> 2.2, >= 2.2.4)
@@ -340,10 +362,13 @@ DEPENDENCIES
   pg
   puma (~> 5.0)
   pundit (~> 2.2)
+  pundit-matchers
   rails (~> 7.0.3, >= 7.0.3.1)
   rails-i18n (~> 7.0, >= 7.0.5)
   resque
+  rspec-rails (~> 6.0, >= 6.0.1)
   sassc-rails
+  shoulda-matchers
   sprockets-rails
   sqlite3 (~> 1.4)
   tzinfo-data

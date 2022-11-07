@@ -1,11 +1,10 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
-  before_action :set_event, only: [:show]
-  before_action :set_current_user_event, only: %i[edit update destroy]
+  before_action :set_event, except: %i[index new create]
 
-  after_action :verify_authorized, only: [:new, :create]
+  after_action :verify_authorized, only: %i[edit update destroy show]
 
-  before_action :password_guard!, only: [:show]
+  #before_action :password_guard!, only: [:show]
   skip_before_action :verify_authenticity_token, only: [:show]
 
   def index
@@ -13,22 +12,31 @@ class EventsController < ApplicationController
   end
 
   def show
+    if params[:pincode].present? && @event.pincode_valid?(params[:pincode])
+      cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode]
+    end
+
+    authorize @event
+
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
     @new_photo = @event.photos.build(params[:photo])
+
+  rescue Pundit::NotAuthorizedError
+    flash.now[:alert] = I18n.t('controllers.events.wrong_pincode')
+    render 'password_form'
   end
 
   def new
     @event = current_user.events.build
-    authorize @event
   end
 
   def edit
+    authorize @event
   end
 
   def create
     @event = current_user.events.build(event_params)
-    authorize @event
 
     respond_to do |format|
       if @event.save
@@ -42,6 +50,8 @@ class EventsController < ApplicationController
   end
 
   def update
+    authorize @event
+
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to event_url(@event), notice: I18n.t('controllers.events.updated') }
@@ -54,6 +64,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    authorize @event
     @event.destroy
 
     respond_to do |format|
@@ -67,28 +78,11 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
     end
 
-    def set_current_user_event
-      @event = current_user.events.find(params[:id])
-    end
-
     def event_params
       params.require(:event).permit(:title, :address, :datetime, :description, :photo, :pincode)
     end
 
-  def password_guard!
-    return true if @event.pincode.blank?
-    return true if signed_in? && current_user == @event.user
-
-    if params[:pincode].present? && @event.pincode_valid?(params[:pincode])
-      cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode]
-    end
-
-    pincode = cookies.permanent["events_#{@event.id}_pincode"]
-    unless @event.pincode_valid?(pincode)
-      if params[:pincode].present?
-        flash.now[:alert] = I18n.t('controllers.events.wrong_pincode')
-      end
-      render 'password_form'
-    end
-  end
+  # def password_guard!
+  #   show?
+  # end
 end
