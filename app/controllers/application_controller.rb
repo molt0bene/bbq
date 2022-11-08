@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
     user_signed_in? && model.user == current_user
   end
 
+  def pundit_user
+    UserContext.new(current_user, cookies)
+  end
+
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   private
