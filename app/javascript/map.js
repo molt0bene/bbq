@@ -1,37 +1,42 @@
 document.addEventListener("turbo:load", () => {
-    ymaps.ready(init);
-    var myMap;
-    console.log("hi 1");
+    console.log("hi 1")
 
-    function init() {
-        console.log("hi 2")
-        const address = document.getElementById('map').getAttribute('data-address');
+    var mapPresence = document.getElementById('map')
 
-        myMap = new ymaps.Map("map", {
-            center: [55.76, 37.64],
-            zoom: 10
-        });
+    if (mapPresence) {
+        ymaps.ready(init);
+        var myMap;
 
-        myGeocoder = ymaps.geocode(address);
+        function init() {
+            console.log("hi 2")
+            const address = document.getElementById('map').getAttribute('data-address');
 
-        myGeocoder.then(
-            function (res) {
-                coordinates = res.geoObjects.get(0).geometry.getCoordinates();
+            myMap = new ymaps.Map("map", {
+                center: [55.76, 37.64],
+                zoom: 10
+            });
 
-                myMap.geoObjects.add(
-                    new ymaps.Placemark(
-                        coordinates,
-                        {iconContent: address},
-                        {preset: 'islands#blueStretchyIcon'}
-                    )
-                );
+            myGeocoder = ymaps.geocode(address);
 
-                myMap.setCenter(coordinates);
-                myMap.setZoom(15);
-            }, function (err) {
-                alert('Ошибка при определении местоположения');
-            }
-        );
-        console.log("hi 3");
+            myGeocoder.then(
+                function (res) {
+                    coordinates = res.geoObjects.get(0).geometry.getCoordinates();
+
+                    myMap.geoObjects.add(
+                        new ymaps.Placemark(
+                            coordinates,
+                            {iconContent: address},
+                            {preset: 'islands#blueStretchyIcon'}
+                        )
+                    );
+
+                    myMap.setCenter(coordinates);
+                    myMap.setZoom(15);
+                }, function (err) {
+                    alert('Ошибка при определении местоположения');
+                }
+            );
+            console.log("hi 3");
+        }
     }
 })
