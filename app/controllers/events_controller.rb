@@ -4,9 +4,6 @@ class EventsController < ApplicationController
 
   after_action :verify_authorized, only: %i[edit update destroy show]
 
-  #before_action :password_guard!, only: [:show]
-  skip_before_action :verify_authenticity_token, only: [:show]
-
   def index
     @events = Event.all
   end
@@ -81,8 +78,4 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:title, :address, :datetime, :description, :photo, :pincode)
     end
-
-  # def password_guard!
-  #   show?
-  # end
 end
