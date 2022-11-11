@@ -14,8 +14,6 @@ gem 'aws-sdk-s3', require: false
 gem "image_processing", ">= 1.2"
 gem 'pundit', '~> 2.2'
 
-gem 'jquery-rails'
-
 gem 'sprockets-rails'
 
 gem 'cssbundling-rails'
