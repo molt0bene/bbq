@@ -172,6 +172,7 @@ ru:
       invites: 'Зовёт'
       subscribers: 'Пойдут:'
       subscribe: 'Я пойду'
+      location: 'Местоположение'
 
     mailer:
       do_not_miss_photo: 'Не пропустите новую фотографию в событии'

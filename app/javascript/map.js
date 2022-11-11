@@ -1,6 +1,4 @@
 document.addEventListener("turbo:load", () => {
-    console.log("hi 1")
-
     const init = () => {
         if (!document.getElementById('map')) return
 
@@ -11,8 +9,6 @@ document.addEventListener("turbo:load", () => {
         });
 
         const myGeocoder = ymaps.geocode(address);
-
-        console.log("hi 2")
 
         myGeocoder.then(
             function (res) {
@@ -31,7 +27,6 @@ document.addEventListener("turbo:load", () => {
             }, function (err) {
                 alert('Ошибка при определении местоположения');
             })
-        console.log("hi 3");
     }
 
     ymaps.ready(init)
