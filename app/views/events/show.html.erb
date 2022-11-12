@@ -4,7 +4,6 @@
       <%= content_tag 'div', '', class: 'event-background',
                       style: "background-image: url(#{event_photo(@event)})" %>
 
-
       <div class="event-info-inner row">
         <div class="col-md-6">
           <div class="event-description">
@@ -88,6 +87,14 @@
       <% if @event.photo.attached? %>
         <%= image_tag @event.photo %>
       <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <h4><%= t('views.event.location') %></h4>
+
+    <div id="map" class="map"
+    data-address="<%= @event.address %>">
     </div>
   </div>
 </div>
