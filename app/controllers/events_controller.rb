@@ -2,6 +2,8 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
   before_action :set_event, except: %i[index new create]
 
+  skip_before_action :verify_authenticity_token
+
   after_action :verify_authorized, only: %i[edit update destroy show]
 
   def index
